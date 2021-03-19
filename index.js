@@ -19,8 +19,12 @@ const firebaseServiceAccount = {
     client_x509_cert_url: CONFIG.FIREBASE_CLIENT_x509_CERT_URL
 }
 
+const mongoConnectionURI = CONFIG.DB_PASSWORD && CONFIG.DB_USERNAME ?
+    `mongodb://${CONFIG.DB_USERNAME}:${CONFIG.DB_PASSWORD}@${CONFIG.DB_URL}/${CONFIG.DB_NAME}` :
+    `mongodb://${CONFIG.DB_URL}/${CONFIG.DB_NAME}`
+
 // TODO: Add an error handler for connection failure
-mongoose.connect('mongodb://' + CONFIG.DB_URL + '/' + CONFIG.DB_NAME, {
+mongoose.connect(mongoConnectionURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: true,

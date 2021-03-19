@@ -7,6 +7,8 @@ CONFIG.APP_ENV = process.env.NODE_ENV || 'development'
 
 CONFIG.DB_URL = process.env.DB_URL || '127.0.0.1'
 CONFIG.DB_NAME = process.env.DB_NAME || 'template'
+CONFIG.DB_USERNAME = process.env.DB_USERNAME
+CONFIG.DB_PASSWORD = process.env.DB_PASSWORD
 
 CONFIG.FIREBASE_ACCOUNT_TYPE = process.env.FIREBASE_ACCOUNT_TYPE || 'service_account'
 CONFIG.FIREBASE_PROJECT_ID = process.env.FIREBASE_PROJECT_ID
