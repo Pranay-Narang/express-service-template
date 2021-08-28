@@ -1,0 +1,39 @@
+version: "3.9"
+
+networks:
+  web:
+    external: true
+  internal:
+    external: false
+
+services:
+  app:
+    build:
+      context: .
+    labels:
+      - traefik.http.routers.express-service-template.rule=Host(`est.pranaynarang.dev`)
+      - traefik.http.routers.express-service-template.tls=true
+      - traefik.http.routers.express-service-template.tls.certresolver=lets-encrypt
+      - traefik.port=3000
+    depends_on:
+      - db
+    environment:
+      DB_URL: db
+    networks:
+      - web
+      - internal
+  
+  db:
+    image: mongo
+    volumes:
+      - mongo-data:/data/db
+    labels:
+      - traefik.enable=false
+    environment:
+      MONGO_INITDB_ROOT_USERNAME:
+      MONGO_INITDB_ROOT_PASSWORD:
+    networks:
+      - internal
+    
+volumes:
+  mongo-data:
