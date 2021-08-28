@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const logger = require('morgan')
 const admin = require("firebase-admin");
+const cors = require("cors")
 
 const CONFIG = require('./config/config')
 const routes = require('./routes')
@@ -37,6 +38,9 @@ admin.initializeApp({
 
 const app = express()
 app.use(express.json())
+
+// Utilize a more restrictive policy if needed
+app.use(cors())
 
 if (CONFIG.APP_ENV == 'development') {
     app.use(logger('dev'))
