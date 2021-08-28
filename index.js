@@ -21,7 +21,7 @@ const firebaseServiceAccount = {
 }
 
 const mongoConnectionURI = CONFIG.DB_PASSWORD && CONFIG.DB_USERNAME ?
-    `mongodb://${CONFIG.DB_USERNAME}:${CONFIG.DB_PASSWORD}@${CONFIG.DB_URL}/${CONFIG.DB_NAME}` :
+    `mongodb://${CONFIG.DB_USERNAME}:${CONFIG.DB_PASSWORD}@${CONFIG.DB_URL}/${CONFIG.DB_NAME}?authSource=admin` :
     `mongodb://${CONFIG.DB_URL}/${CONFIG.DB_NAME}`
 
 // TODO: Add an error handler for connection failure
