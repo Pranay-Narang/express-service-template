@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kalpasin/express-service-template.git"
+    "url": "git+https://github.com/Pranay-Narang/express-service-template.git"
   },
   "author": "Pranay Narang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kalpasin/express-service-template/issues"
+    "url": "https://github.com/Pranay-Narang/express-service-template/issues"
   },
-  "homepage": "https://github.com/kalpasin/express-service-template#readme",
+  "homepage": "https://github.com/Pranay-Narang/express-service-template#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
