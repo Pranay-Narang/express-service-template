@@ -15,4 +15,6 @@ RUN npm ci --only=production
 # Bundle app source
 COPY . .
 
+EXPOSE 3000
+
 CMD ["pm2-runtime", "ecosystem.config.js"]
